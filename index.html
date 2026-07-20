@@ -144,7 +144,8 @@ nav.s{
 .n-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--amber);transition:width .6s var(--slow)}
 .n-links a:hover{color:var(--charcoal)}
 .n-links a:hover::after{width:100%}
-.n-burger{display:none;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--charcoal)}
+.n-burger{display:none;font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);background:var(--charcoal);border:1px solid var(--charcoal);padding:.7rem 1.3rem;transition:background .3s,border-color .3s}
+.n-burger:active{background:var(--amber);border-color:var(--amber)}
 
 /* ── ELEMEN ASAS ── */
 .eyebrow{
@@ -178,6 +179,76 @@ p{opacity:.84}
 .shot--tall{aspect-ratio:4/5}
 .shot--prod{aspect-ratio:3/4}
 .shot--wide{aspect-ratio:16/10}
+
+/* ═══ GAYA AESOP — HOME SAHAJA ═══ */
+/* jalur pengumuman */
+.ann{
+  background:var(--deep);color:var(--sand);
+  text-align:center;font-family:var(--mono);
+  font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.7rem 1rem;position:relative;z-index:310;
+}
+/* hero penuh skrin */
+.a-hero{
+  min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;
+  align-items:stretch;
+}
+.a-hero__text{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:7rem clamp(2rem,5vw,5rem) 5rem calc(clamp(2rem,5vw,5rem) + var(--rail));
+}
+.a-hero__text h1{margin:1.4rem 0 1.6rem}
+.a-hero__text .lede{margin-bottom:2.4rem}
+.a-hero__art img,.a-fill img{width:100%;height:100%;object-fit:cover;display:block}
+.a-hero__ph{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--stone);opacity:.55;
+}
+.a-hero__art{
+  background:var(--sand-2);border-left:1px solid var(--rule);
+  position:relative;overflow:hidden;min-height:60vh;
+}
+
+/* grid produk seragam gaya Aesop */
+.a-cat{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+.a-prod{
+  display:flex;flex-direction:column;
+  border-right:1px solid var(--rule);
+}
+.a-prod:last-child{border-right:0}
+.a-prod__art{
+  aspect-ratio:1/1;background:var(--sand-2);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;border-bottom:1px solid var(--rule);
+}
+.a-prod:nth-child(2) .a-prod__art{background:#E8E2D4}
+.a-prod__ph{
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--stone);opacity:.6;
+}
+.a-prod__body{padding:2.2rem clamp(1.6rem,3vw,2.8rem) 2.6rem;display:flex;flex-direction:column;flex:1}
+.a-prod__body h3{margin:.5rem 0 .7rem}
+.a-prod__body p{font-size:.9rem;opacity:.78;margin-bottom:1.4rem;flex:1}
+.a-prod__foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.a-prod__price{font-family:var(--mono);font-size:.9rem;letter-spacing:.04em}
+
+/* seksyen imej penuh lebar */
+.a-fill{
+  position:relative;aspect-ratio:21/9;background:var(--sand-2);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.a-fill__ph{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);opacity:.6}
+
+@media(max-width:900px){
+  .a-hero{grid-template-columns:1fr;min-height:auto}
+  .a-hero__art{order:-1;min-height:56vh;border-left:0;border-bottom:1px solid var(--rule)}
+  .a-hero__text{padding:3rem var(--px) 3.5rem}
+  .a-cat{grid-template-columns:1fr}
+  .a-prod{border-right:0;border-bottom:1px solid var(--rule)}
+  .a-fill{aspect-ratio:4/3}
+}
 
 /* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .9s var(--slow),transform .9s var(--slow)}
@@ -353,11 +424,11 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
 <nav id="nav">
   <div class="n-logo" onclick="go('home')">Zuzz Natural</div>
   <div class="n-links" id="nlinks">
-    <a onclick="go('home')">Utama</a>
-    <a onclick="go('katalog')">Katalog</a>
-    <a onclick="go('bilik')">Bilik Diagnosis</a>
-    <a onclick="go('rosemary')">Rosemary</a>
-    <a onclick="go('cerita')">Cerita Kami</a>
+    <a onclick="go('home')">Laman Utama</a>
+    <a onclick="go('katalog')">Produk</a>
+    <a onclick="go('bilik')">Penjagaan Rambut</a>
+    <a onclick="go('rosemary')">Bahan</a>
+    <a onclick="go('cerita')">Tentang Kami</a>
     <a onclick="go('soalan')">Soalan Lazim</a>
     <a onclick="go('pesanan')">Pesanan</a>
     <a href="https://wa.me/60174916815?text=Salam%20Zuzz%20Natural%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener">WhatsApp</a>
@@ -367,56 +438,91 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
 
 <!-- ══════════════ UTAMA ══════════════ -->
 <div id="page-home" class="page active">
-  <header class="hero">
-    <div>
+
+  <!-- HERO PENUH SKRIN -->
+  <header class="a-hero">
+    <div class="a-hero__text">
       <div class="eyebrow rv">Dirumus Teliti Dengan Tangan — Kedah, Malaysia</div>
       <h1 class="h-xl rv">Rawat kulit kepala.<br>Rambut akan subur.</h1>
       <p class="lede rv">Dua formulasi sahaja, dirumus teliti dengan tangan dalam batch kecil. Rosemary pada kepekatan yang berkesan. Tanpa sulfat, tanpa silikon, tanpa pewangi sintetik.</p>
       <div class="hero-cta rv">
         <a class="btn btn--solid" onclick="go('katalog')">Lihat Produk</a>
-        <a class="btn" onclick="go('bilik')">Bilik Diagnosis</a>
+        <a class="btn" onclick="go('bilik')">Penjagaan Rambut</a>
       </div>
     </div>
-    <div class="hero-art rv">
-      <!-- GANTI GAMBAR -->
-      <img class="shot shot--tall" src="img/hero-dropper.jpg" alt="Botol serum kaca amber Zuzz Natural" width="600" height="750">
+    <div class="a-hero__art rv">
+      <!-- GANTI GAMBAR: botol serum, tumpukan ke tengah, cahaya sisi -->
+      <img src="img/hero-dropper.jpg" alt="Botol serum kaca amber Zuzz Natural" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="a-hero__ph" style="display:none">Slot Gambar Hero</span>
     </div>
   </header>
 
-  <section class="sec sec--rule sec--tint">
+  <!-- GRID PRODUK SERAGAM -->
+  <section class="a-cat">
+    <article class="a-prod rv">
+      <div class="a-prod__art">
+        <!-- GANTI GAMBAR -->
+        <img src="img/produk-syampu.jpg" alt="Syampu Rosemary & Pudina 300 mL" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="a-prod__ph" style="display:none">Syampu · 300 mL</span>
+      </div>
+      <div class="a-prod__body">
+        <div class="eyebrow">01 — Mencuci</div>
+        <h3 class="h-md">Syampu Rosemary &amp; Pudina</h3>
+        <p>Pencuci pekat berasaskan glukosida botani. Menanggalkan sisa pomade, minyak dan silikon lama tanpa mengikis lipid pelindung kulit kepala.</p>
+        <div class="a-prod__foot">
+          <span class="a-prod__price">RM 89.00</span>
+          <a class="btn btn--solid" onclick="go('katalog')">Lihat</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="a-prod rv">
+      <div class="a-prod__art">
+        <!-- GANTI GAMBAR -->
+        <img src="img/produk-serum.jpg" alt="Serum Kulit Kepala & Rambut 50 mL" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="a-prod__ph" style="display:none">Serum · 50 mL</span>
+      </div>
+      <div class="a-prod__body">
+        <div class="eyebrow">02 — Menjaga</div>
+        <h3 class="h-md">Serum Kulit Kepala &amp; Rambut</h3>
+        <p>Minyak asas MCT dengan rosemary pekat. Melancarkan aliran darah ke folikel dan menyalut helaian daripada geseran harian.</p>
+        <div class="a-prod__foot">
+          <span class="a-prod__price">RM 129.00</span>
+          <a class="btn btn--solid" onclick="go('katalog')">Lihat</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- IMEJ PENUH LEBAR -->
+  <div class="a-fill rv">
+    <!-- GANTI GAMBAR: makro botani atau tekstur, lebar sinematik -->
+    <img src="img/makro-botani.jpg" alt="Tangkapan makro bahan botani" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="a-fill__ph" style="display:none">Rosemary · Pudina · Kedah</span>
+  </div>
+
+  <!-- FALSAFAH RINGKAS -->
+  <section class="sec">
     <div class="wrap">
       <div class="split">
         <div class="rv">
           <div class="eyebrow">Asasnya</div>
-          <h2 class="h-lg">Rambut tidak boleh dirawat. Tanahnya boleh.</h2>
+          <h2 class="h-lg">Rambut tidak boleh dirawat. Akarnya boleh.</h2>
           <p>Batang rambut yang anda lihat itu sebenarnya tisu mati. Tiada krim atau serum yang mampu menghidupkannya semula. Yang masih hidup hanyalah folikel di dalam kulit kepala — dan itulah satu-satunya tempat yang berbaloi dijaga.</p>
-          <p>Apabila kulit kepala tersumbat dengan <span class="term">sisa sintetik</span> — silikon, sulfat, lapisan pomade — liang tertutup dan folikel mengeluarkan helai yang semakin nipis setiap kitaran. Apabila <span class="term">haba berulang</span> mengeringkan lapisan atas, tisu menjadi kaku dan hilang keanjalan. Tisu kaku menyekat aliran darah, dan folikel yang kurang darah tidak mampu memegang rambut lama.</p>
+          <p>Apabila kulit kepala tersumbat dengan <span class="term">sisa sintetik</span> daripada syampu komersial — silikon, sulfat, lapisan pomade — liang tertutup dan folikel mengeluarkan helai yang semakin nipis setiap kitaran.</p>
           <p><strong>Rambut gugur bukan kerana helainya lemah. Ia gugur kerana pegangannya longgar.</strong></p>
           <a class="btn" onclick="go('bilik')" style="margin-top:.8rem">Lihat Punca Sebenar</a>
         </div>
         <div class="rv">
           <!-- GANTI GAMBAR -->
-          <img class="shot shot--tall" src="img/makro-botani.jpg" alt="Tangkapan makro bahan botani" width="600" height="750">
+          <img class="shot shot--tall" src="img/makro-botani.jpg" alt="Tangkapan makro bahan botani" onerror="this.style.opacity=1">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec sec--rule">
-    <div class="wrap">
-      <div class="rv" style="max-width:56ch;margin-bottom:3.5rem">
-        <div class="eyebrow">Katalog</div>
-        <h2 class="h-lg" style="margin-top:.8rem">Dua produk. Satu mencuci, satu menjaga.</h2>
-        <p class="lede" style="margin-top:1rem">Kami tidak menghasilkan sepuluh jenis. Dua ini sudah memadai jika digunakan dengan betul.</p>
-      </div>
-      <div class="rv" style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a class="btn btn--solid" onclick="go('katalog')">Lihat Kedua-duanya</a>
-      </div>
-    </div>
-  </section>
-
   <!-- TESTIMONI — sebenar, dikongsi dengan kebenaran klien -->
-  <section class="sec sec--rule">
+  <section class="sec sec--rule sec--tint">
     <div class="wrap">
       <div class="rv" style="max-width:56ch;margin-bottom:3rem">
         <div class="eyebrow">Daripada Klien</div>
@@ -453,7 +559,7 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
 <!-- ══════════════ KATALOG ══════════════ -->
 <div id="page-katalog" class="page">
   <div class="p-head">
-    <div class="eyebrow rv">Katalog</div>
+    <div class="eyebrow rv">Produk</div>
     <h1 class="h-xl rv">Dua produk. Satu mencuci, satu menjaga.</h1>
     <p class="lede rv">Kami tidak menghasilkan sepuluh jenis. Dua ini sudah memadai jika digunakan dengan betul.</p>
   </div>
@@ -528,7 +634,7 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
 <!-- ══════════════ BILIK DIAGNOSIS ══════════════ -->
 <div id="page-bilik" class="page">
   <div class="p-head">
-    <div class="eyebrow rv">Bilik Diagnosis</div>
+    <div class="eyebrow rv">Penjagaan Rambut</div>
     <h1 class="h-xl rv">Empat perkara yang<br>merosakkan rambut anda<br>setiap hari.</h1>
     <p class="lede rv">Selalunya bukan produk yang menjadi punca. Rutin harian yang tidak disedari melakukan lebih banyak kerosakan. Ini empat yang paling kerap kami jumpa.</p>
   </div>
@@ -651,7 +757,7 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
         </tr>
         <tr>
           <th>Glukosida botani</th>
-          <td>Surfaktan lembut daripada gula dan kelapa. Ia mencuci tanpa mengikis lipid pelindung kulit kepala — berbeza dengan SLS.</td>
+          <td>Surfaktan lembut daripada gula dan kelapa. Ia mencuci tanpa mengikis lipid pelindung kulit kepala — berbeza dengan SLS dalam syampu komersial.</td>
         </tr>
         <tr>
           <th>Asid sitrik</th>
@@ -709,7 +815,7 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
 <!-- ══════════════ CERITA KAMI ══════════════ -->
 <div id="page-cerita" class="page">
   <div class="p-head">
-    <div class="eyebrow rv">Cerita Kami</div>
+    <div class="eyebrow rv">Tentang Kami</div>
     <h1 class="h-xl rv">Saya membuat ini kerana<br>saya penat melihat orang<br>menderita dalam diam.</h1>
   </div>
 
@@ -723,7 +829,7 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
         <div class="eyebrow">Nota Pengasas</div>
         <h2 class="h-lg">Uzair — Formulator</h2>
         <p>Kerja harian saya merawat badan orang: otot, sendi, tisu lembut. Tetapi tahun demi tahun, perkara yang sama muncul dalam perbualan. Rambut gugur tanpa henti. Kulit kepala gatal sehingga berdarah. Kelemumur yang tidak pernah hilang walau berapa botol sudah dicuba.</p>
-        <p>Apabila saya membaca senarai bahan produk yang mereka gunakan, jawapannya ada di situ. Pencuci yang terlalu agresif. Silikon yang menyalut rambut supaya kelihatan licin buat sementara, sambil menyumbat liang. Pewangi sintetik yang membuatkan kulit kepala meradang. Semua ini murah dihasilkan dan cepat menunjukkan hasil — itu sahaja sebabnya ia berada di dalam botol tersebut.</p>
+        <p>Apabila saya membaca senarai bahan produk yang mereka gunakan, jawapannya ada di situ. Syampu komersial dengan pencuci yang terlalu agresif. Silikon yang menyalut rambut supaya kelihatan licin buat sementara, sambil menyumbat liang. Pewangi sintetik yang membuatkan kulit kepala meradang. Semua ini murah dihasilkan dan cepat menunjukkan hasil — itu sahaja sebabnya ia berada di dalam botol tersebut.</p>
         <p>Jadi saya merumus sendiri. Bahan botani, tanpa sintetik, tanpa jalan pintas walaupun ia lebih mahal dan lebih lambat. Setiap batch ditimbang, diadun dan dibotolkan dengan tangan saya. Batch kami kecil kerana itulah kemampuan sepasang tangan — bukan kerana ingin kelihatan eksklusif.</p>
         <p>Formula ini menggunakan rosemary pada kepekatan yang berkesan, bukan sekadar setitik untuk disenaraikan pada label. Ia dirumus untuk kulit kepala yang hidup dalam cuaca panas lembap, di bawah tudung dan helmet. Itu bukan pasaran yang diambil peduli oleh jenama besar.</p>
         <p style="font-family:var(--serif);font-size:1.24rem;font-style:italic;line-height:1.55;opacity:1;margin:2rem 0 1.6rem;padding-left:1.4rem;border-left:2px solid var(--amber)">Saya buat ini untuk ibu saya dahulu. Sekarang saya buat untuk orang lain.</p>
@@ -816,7 +922,7 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
             <span>Boleh guna jika rambut saya diwarna atau dirawat kimia?</span><span class="faq-ico">+</span>
           </button>
           <div class="faq-a">
-            <p>Boleh, dan sebenarnya lebih baik. Syampu tanpa sulfat tidak mengikis warna secepat SLS, jadi warna bertahan lebih lama.</p>
+            <p>Boleh, dan sebenarnya lebih baik. Syampu kami tanpa sulfat tidak mengikis warna secepat syampu komersial yang mengandungi SLS, jadi warna bertahan lebih lama.</p>
             <p>Satu perkara perlu diketahui: jika rambut anda selama ini disalut silikon, beberapa kali cucian pertama akan menanggalkan lapisan itu. Rambut mungkin terasa lebih kasar buat sementara. Itu bukan kerosakan — itu tekstur sebenar rambut anda yang muncul semula selepas sekian lama tersembunyi. Ia stabil selepas dua hingga tiga minggu.</p>
           </div>
         </div>
@@ -836,8 +942,7 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
             <span>Adakah ia halal?</span><span class="faq-ico">+</span>
           </button>
           <div class="faq-a">
-            <p>Semua bahan kami berasaskan tumbuhan. Tiada bahan berasaskan haiwan, tiada alkohol dalam formulasi, dan tiada ujian ke atas haiwan.</p>
-            <p>[SEMAK — jika anda belum memohon pensijilan JAKIM, tulis dengan jujur: "Kami belum memiliki pensijilan halal rasmi. Senarai bahan penuh ada di halaman Rosemary untuk semakan anda sendiri." Jangan sekali-kali dakwa disahkan halal tanpa sijil.]</p>
+            <p>Semua bahan kami berasaskan tumbuhan. Tiada bahan berasaskan haiwan, tiada alkohol dalam formulasi, dan tiada ujian ke atas haiwan. Senarai bahan penuh boleh disemak sendiri di halaman Bahan.</p>
           </div>
         </div>
 
@@ -957,20 +1062,14 @@ footer{background:var(--deep);color:var(--sand);padding:5rem var(--px) 2.5rem ca
   <div class="f-grid">
     <div>
       <h4>Zuzz Natural</h4>
-      <p class="f-note" style="margin-bottom:1.4rem">Dirumus teliti dengan tangan di Kedah. Batch kecil, ditimbang dan dibotolkan sendiri. Tanpa bahan sintetik.</p>
-      <!-- GANTI — isi butiran pendaftaran sebenar. Jangan reka nombor. -->
-      <p class="f-note" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;line-height:2;opacity:.55">
-        [NAMA PENDAFTARAN SSM]<br>
-        [NO. PENDAFTARAN]<br>
-        [ALAMAT PERNIAGAAN, KEDAH]
-      </p>
+      <p class="f-note">Dirumus teliti dengan tangan di Kedah. Batch kecil, ditimbang dan dibotolkan sendiri. Tanpa bahan sintetik.</p>
     </div>
     <div>
       <h4>Laman</h4>
-      <a onclick="go('katalog')">Katalog</a>
-      <a onclick="go('bilik')">Bilik Diagnosis</a>
-      <a onclick="go('rosemary')">Rosemary</a>
-      <a onclick="go('cerita')">Cerita Kami</a>
+      <a onclick="go('katalog')">Produk</a>
+      <a onclick="go('bilik')">Penjagaan Rambut</a>
+      <a onclick="go('rosemary')">Bahan</a>
+      <a onclick="go('cerita')">Tentang Kami</a>
       <a onclick="go('soalan')">Soalan Lazim</a>
       <a onclick="go('pesanan')">Cara Pesanan</a>
       <a onclick="go('penghantaran')">Polisi Penghantaran</a>
